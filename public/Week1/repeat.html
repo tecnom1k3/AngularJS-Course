@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Basic Binding</title>
+    <script src="../app/vendors/angular/angular.min.js"></script>
+</head>
+<body>
+    <label>Select an Option</label>
+    <select ng-model="nameSelected">
+        <option  ng-repeat="name in ['Jorge', 'Pamela', 'David', 'Liliana'] | orderBy : name">
+            {{name}}
+        </option>
+    </select>
+    <br />
+    <br />
+    <label>Your option is: {{nameSelected}}</label>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Buzztler",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/palmor/buzztler",
+  "authors": [
+    "Derris Palmor <ipalmor@gmail.com>"
+  ],
+  "description": "WiP",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.3.12"
+  }
+}

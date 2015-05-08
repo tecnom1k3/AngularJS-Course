@@ -1,0 +1,9 @@
+{
+  "name": "Week1",
+  "version": "0.0.1",
+  "description": "Here we are",
+  "author": "ME",
+  "devDependencies": {
+    "restify": "^2.8.2"
+  }
+}
