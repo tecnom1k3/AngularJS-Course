@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../app/vendors/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script type="javascript" src="../app/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../app/vendors/angular/angular.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Form Validation</h2>
+
+    <form name="form" class="css-form" >
+        <div class="alert alert-danger" role="alert" ng-show="form.$submitted">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            There are some errors, please correct them below
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="name" class="form-control" id="name" required placeholder="Enter your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" required placeholder="Enter email">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Accept Terms</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
+</body>
+</html>
