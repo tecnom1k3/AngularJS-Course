@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="MyApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -7,30 +7,32 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <script type="javascript" src="../app/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../app/vendors/angular/angular.min.js"></script>
+    <script src="js/formValidation.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" ng-controller="FirstController">
     <h2>Form Validation</h2>
 
-    <form name="form" class="css-form" >
-        <div class="alert alert-danger" role="alert" ng-show="form.$submitted">
+    <form name="form" class="css-form" novalidate>
+        <div class="alert alert-danger" role="alert" ng-show="invalidForm">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>
             There are some errors, please correct them below
+            <div ng-repeat="error in formErrors">{{error}}</div>
         </div>
 
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="name" class="form-control" id="name" required placeholder="Enter your Name">
+            <input type="name" class="form-control" id="name" required placeholder="Enter your Name" ng-model="user.name">
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" required placeholder="Enter email">
+            <input type="email" class="form-control" id="email" required placeholder="Enter email" ng-model="user.email">
         </div>
         <div class="checkbox">
-            <label><input type="checkbox"> Accept Terms</label>
+            <label><input type="checkbox" ng-model="terms"> Accept Terms</label>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="button" class="btn btn-default" ng-click="onSubmit()">Submit</button>
     </form>
 </div>
 </body>
