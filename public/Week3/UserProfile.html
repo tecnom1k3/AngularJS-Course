@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="Profile">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../app/vendors/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script type="javascript" src="../app/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../app/vendors/angular/angular.min.js"></script>
+    <script src="../app/vendors/angular-resource/angular-resource.min.js"></script>
+    <script src="js/ProfileAppConfiguration.js"></script>
+    <script src="js/RestService.js"></script>
+    <script src="js/ProfileService.js"></script>
+    <script src="js/UserProfile.js"></script>
+</head>
+<body>
+<div class="container user_profile" ng-controller="ProfileController">
+    <h2>User Profile</h2>
+    <hr/>
+    <form name="form" class="form-horizontal" novalidate>
+        <div class="row">
+            <div class="col-md-1 left_form">
+                <img src="{{user.picture}}" class="img-thumbnail"/>
+                <button class="btn btn-default" type="submit">Upload Picture</button>
+            </div>
+            <div class="col-md-1 right_form">
+                <div class="alert alert-danger" role="alert" ng-show="invalidForm">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    There are some errors, please correct them below
+                    <div ng-repeat="error in formErrors">{{error}}</div>
+                </div>
+                <div class="information_holder">
+                    <h4>Personal Information</h4>
+
+                    <hr/>
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Full Name:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" required placeholder="Enter your Name"
+                                   ng-model="user.name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job_title" class="col-sm-2 control-label">Job Title:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="job_title" required
+                                   placeholder="Enter your Job Title"
+                                   ng-model="user.jobTitle">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state" class="col-sm-2 control-label">State:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="state" required
+                                   placeholder="Enter your legal residence"
+                                   ng-model="user.state">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postal_code" class="col-sm-2 control-label">Postal Code:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="postal_code" required
+                                   placeholder="Postal Code or ZIP information"
+                                   ng-model="user.postalCode">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="information_holder">
+                    <h4>Contact Information</h4>
+
+                    <hr/>
+
+
+                    <div class="form-group">
+                        <label for="mobile_phone" class="col-sm-2 control-label">Mobile Phone:</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mobile_phone" required
+                                   placeholder="Mobile Phone (00)-000-000"
+                                   ng-model="user.mobilePhone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email:</label>
+
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" required placeholder="Enter email"
+                                   ng-model="user.email">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-1 right_form submit_terms">
+                <div class="checkbox">
+                    <label><input type="checkbox" ng-model="terms"> Accept Terms</label>
+                </div>
+                <hr />
+                <button type="button" class="btn btn-default" ng-click="onSubmit()">Submit</button>
+                <button type="button" class="btn btn-default" ng-click="onLoadPreviousData()">Load Previous Data</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

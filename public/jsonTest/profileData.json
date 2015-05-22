@@ -1,0 +1,9 @@
+{
+  "name": "Darth Vader",
+  "jobTitle": "Sith Lord, Supreme Commander of the Imperial Fleet",
+  "state": "Tatooine",
+  "postalCode": "Sith, Galactic Empire",
+  "mobilePhone": "00000000",
+  "email": "imyourfather@disney.com",
+  "picture": "../images/darth.jpg"
+}

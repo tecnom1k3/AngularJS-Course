@@ -22,6 +22,11 @@ angular.module('MyApp', []).controller('FirstController', ['$scope', function ($
             }
         }
 
+        if(!$scope.terms){
+            $scope.formErrors.push("You must accept terms and conditions ");
+        }
+
+
         $scope.invalidForm  = $scope.formErrors.length > 0;
 
     };

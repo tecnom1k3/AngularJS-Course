@@ -1,6 +1,31 @@
 input[type="name"], input[type="email"] {
   width: 400px !important; }
 
+div.user_profile {
+  margin-left: 10px; }
+  div.user_profile input[type="text"], div.user_profile input[type="email"] {
+    width: 400px !important; }
+  div.user_profile div.left_form {
+    width: 178px;
+    background-color: #f1f7f8;
+    height: 439px;
+    padding: 17px; }
+    div.user_profile div.left_form button {
+      margin-top: 6px;
+      margin-left: 9px; }
+    div.user_profile div.left_form img {
+      width: 140px;
+      height: 160px; }
+  div.user_profile div.right_form {
+    width: 787px !important; }
+  div.user_profile div.information_holder {
+    margin: 10px;
+    padding-bottom: 10px; }
+  div.user_profile div.submit_terms {
+    text-align: right; }
+    div.user_profile div.submit_terms button {
+      margin-top: 10px; }
+
 html, body {
   margin: 0;
   padding: 0;
