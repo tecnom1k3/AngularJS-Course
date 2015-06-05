@@ -26,6 +26,54 @@ div.user_profile {
     div.user_profile div.submit_terms button {
       margin-top: 10px; }
 
+div.directive_usage {
+  margin-left: 10px; }
+  div.directive_usage div.table-container {
+    width: 645px; }
+  div.directive_usage div.form-group {
+    margin: 6px; }
+    div.directive_usage div.form-group label {
+      padding-right: 8px; }
+    div.directive_usage div.form-group #age {
+      width: 100px !important; }
+    div.directive_usage div.form-group #sex {
+      height: 34px;
+      font-size: 14px;
+      line-height: 1.42857;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+      -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+  div.directive_usage input[type="text"] {
+    width: 200px !important; }
+  div.directive_usage td.person-id, div.directive_usage th.person-id {
+    width: 40px; }
+  div.directive_usage td.person-delete, div.directive_usage th.person-delete {
+    width: 93px; }
+    div.directive_usage td.person-delete button, div.directive_usage th.person-delete button {
+      height: 29px !important;
+      font-size: 12px !important; }
+  div.directive_usage td.person-sex {
+    width: 103px;
+    text-align: center;
+    padding-top: 10px !important; }
+    div.directive_usage td.person-sex span {
+      font-size: 16px !important;
+      display: block !important;
+      width: 100px !important; }
+  div.directive_usage span.person-sex-male {
+    background-color: #F7464A; }
+  div.directive_usage span.person-sex-unknown {
+    background-color: #46BFBD; }
+  div.directive_usage span.person-sex-female {
+    background-color: #FDB45C; }
+
 html, body {
   margin: 0;
   padding: 0;
