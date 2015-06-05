@@ -5,97 +5,15 @@ App.controller('MainController', ['$scope', '$log', function ($scope, $log) {
 
     $log.log('Controller has been created');
 
-    $scope.person = {};
-    $scope.personList = [];
-    $scope.showChart = false;
+    $scope.personList = [
+        {name: 'Jorge', age: 20, sex: 'Male'},
+        {name: 'Pamela', age: 20, sex: 'Female'},
+        {name: 'Jorge', age: 20, sex: 'Male'},
+        {name: 'Liliana', age: 20, sex: 'Female'},
+        {name: 'Karla', age: 20, sex: 'Female'},
+        {name: 'Vicky', age: 20, sex: 'Female'}
+    ];
 
-    function initApp() {
-        $scope.person = {
-            name: '',
-            sex: '',
-            age: ''
-        };
-    }
-
-    $scope.addPerson = function () {
-        $scope.personList.push($scope.person);
-        initApp();
-    };
-
-    $scope.deletePerson = function (element) {
-        $scope.personList = _.filter($scope.personList, function (e) {
-            return e !== element;
-        });
-    };
-
-    var options = {
-        //Boolean - Whether we should show a stroke on each segment
-        segmentShowStroke: true,
-
-        //String - The colour of each segment stroke
-        segmentStrokeColor: "#fff",
-
-        //Number - The width of each segment stroke
-        segmentStrokeWidth: 2,
-
-        //Number - The percentage of the chart that we cut out of the middle
-        percentageInnerCutout: 50, // This is 0 for Pie charts
-
-        //Number - Amount of animation steps
-        animationSteps: 100,
-
-        //String - Animation easing effect
-        animationEasing: "easeOutBounce",
-
-        //Boolean - Whether we animate the rotation of the Doughnut
-        animateRotate: true,
-
-        //Boolean - Whether we animate scaling the Doughnut from the centre
-        animateScale: false,
-    };
-
-    $scope.createChart = function () {
-        $scope.showChart = true;
-
-        var ctx = document.getElementById("myChart").getContext("2d");
-
-        var data = [];
-        addChartData('Male', '#F7464A', '#5AD3D1', data);
-        addChartData('Female', '#FDB45C', '#FFC870', data);
-        addChartData('Unknown', '#46BFBD', '#5AD3D1', data);
-
-        var myPieChart = new Chart(ctx).Pie(data, options);
-    };
-
-    $scope.sexClass = function (person) {
-        if (person.sex === 'Male') {
-            return 'person-sex-male';
-        }
-
-        if (person.sex === 'Female') {
-            return 'person-sex-female';
-        }
-
-        if (person.sex === 'Unknown') {
-            return 'person-sex-unknown';
-        }
-    };
-
-    function addChartData(label, color, highlight, data) {
-        var population = _.filter($scope.personList, function (e) {
-            return e.sex === label;
-        });
-
-        if (population) {
-            data.push({
-                value: population.length,
-                color: color,
-                highlight: highlight,
-                label: label
-            });
-        }
-    }
-
-    initApp();
+    $scope.auth = true;
 
 }]);

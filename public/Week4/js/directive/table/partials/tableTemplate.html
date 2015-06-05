@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-8 left_form">
+        <div class="table-container">
+            <form name="form" class="form-inline" novalidate>
+
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" ng-model="person.name" class="form-control" id="name" required
+                           placeholder="Enter your Name"/>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" ng-model="person.age" class="form-control" id="age" required
+                           placeholder="0"/>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex:</label>
+                    <select id="sex" ng-model="person.sex">
+                        <option></option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Unknown</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" ng-click="addPerson()">Add</button>
+                </div>
+
+            </form>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="person-id">ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th class="person-sex">Sex</th>
+                    <th class="person-delete"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="person in personList">
+                    <td class="person-id">{{$index + 1}}</td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                    <td class="person-sex"><span class="label" ng-class='sexClass(person)'>{{person.sex}}</span></td>
+                    <td class="person-delete">
+                        <button type="button" class="btn btn-danger" ng-click="deletePerson(person)">Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot ng-if="personList.length >= 5">
+                <tr>
+                    <td colspan="5">
+                        <button type="button" class="btn btn-info" ng-click="createChart()">Generate Chart</button>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+
+
+        </div>
+
+    </div>
+    <div class="col-md-4 left_form" >
+        <h3 ng-show="showChart">Population by Gender:</h3>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+</div>
